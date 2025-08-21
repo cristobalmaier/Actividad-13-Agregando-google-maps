@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador Minimalista</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rastreador de Ubicación</h1>
+        
+        <div class="controls">
+            <div class="button-group">
+                <button class="btn-primary" onclick="getCurrentLocation()">Mi Ubicación</button>
+                <button onclick="simulateMovement()" id="simulate-btn">Simular Movimiento</button>
+                <button onclick="playRandomSound()">Reproducir Audio</button>
+                <button onclick="stopAllSounds()">Pausar Audio</button>
+                <button onclick="fetchDogImage()">Nueva Foto</button>
+            </div>
+            
+            <div class="location-display" id="location-info">
+                Presiona "Mi Ubicación" para comenzar
+            </div>
+            
+            <div class="status-bar">
+                <div class="status-item">
+                    <div class="status-dot" id="gps-dot"></div>
+                    <span id="gps-status">GPS inactivo</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot active" id="audio-dot"></div>
+                    <span id="audio-status">Audio disponible</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot active" id="api-dot"></div>
+                    <span>API conectada</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Coordenadas</h3>
+                <div class="coordinates" id="coordinates">
+                    Latitud: --<br>
+                    Longitud: --
+                </div>
+                <p id="address">Esperando ubicación...</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Audio</h3>
+                <p id="current-sound">Sin audio reproduciéndose</p>
+                <div class="audio-indicator" id="audio-indicator">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <span>Reproduciendo</span>
+                </div>
+                <p style="margin-top: 12px; font-size: 13px;">
+                    Los sonidos cambian automáticamente según tu ubicación
+                </p>
+            </div>
+            
+            <div class="info-card dog-container">
+                <h3>Mascota</h3>
+                <div class="dog-image-container">
+                    <img id="dog-image" class="dog-image" src="" alt="" style="display: none;">
+                    <div class="dog-placeholder" id="dog-placeholder">
+                        <p>Haz clic en "Nueva Foto"</p>
+                    </div>
+                </div>
+                <p id="dog-status">Esperando nueva mascota...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
