@@ -1,6 +1,6 @@
 # Rastreador de Ubicación con Mapa Interactivo
 
-Una aplicación web minimalista que permite rastrear y visualizar tu ubicación en un mapa interactivo, con características adicionales como reproducción de sonidos y visualización de imágenes aleatorias de perros.
+Una aplicación web que permite rastrear y visualizar tu ubicación en un mapa interactivo, con características adicionales como reproducción de sonidos y visualización de imágenes aleatorias de perros.
 
 ## Características
 
